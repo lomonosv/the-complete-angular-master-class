@@ -15,7 +15,12 @@ import { CoursesService } from './courses.service';
             <td [attr.colspan]="colSpan"></td>
         </tr>
     </table>
-    <button class="btn btn-primary">Save</button>
+    <button
+        class="btn btn-primary"
+        [class.active]="isActive"
+        [style.backgroundColor]="isActive ? 'blue' : 'white'"
+        [style.color]="isActive ? 'white' : 'black'"
+    >Save</button>
   `
 })
 export class CoursesComponent {
@@ -23,6 +28,7 @@ export class CoursesComponent {
   imageUrl = 'https://picsum.photos/400/200';
   colSpan = 2;
   courses: string[];
+  isActive = false;
 
   constructor(private coursesService: CoursesService) {
     this.courses = this.coursesService.getCourses();
