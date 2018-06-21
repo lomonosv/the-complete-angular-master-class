@@ -15,12 +15,15 @@ import { CoursesService } from './courses.service';
             <td [attr.colspan]="colSpan"></td>
         </tr>
     </table>
-    <button
-        class="btn btn-primary"
-        [class.active]="isActive"
-        [style.backgroundColor]="isActive ? 'blue' : 'white'"
-        [style.color]="isActive ? 'white' : 'black'"
-    >Save</button>
+    <div (click)="onDivClicked()">
+      <button
+          class="btn btn-primary"
+          [class.active]="isActive"
+          [style.backgroundColor]="isActive ? 'blue' : 'white'"
+          [style.color]="isActive ? 'white' : 'black'"
+          (click)="onSave($event)"
+      >Save</button>
+    </div>
   `
 })
 export class CoursesComponent {
@@ -32,5 +35,14 @@ export class CoursesComponent {
 
   constructor(private coursesService: CoursesService) {
     this.courses = this.coursesService.getCourses();
+  }
+
+  onSave($event) {
+    $event.stopPropagation();
+    console.log($event);
+  }
+
+  onDivClicked() {
+    console.log('Div was clicked');
   }
 }
