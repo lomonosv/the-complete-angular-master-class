@@ -24,6 +24,7 @@ import { CoursesService } from './courses.service';
           (click)="onSave($event)"
       >Save</button>
     </div>
+    <input type="text" (keyup.enter)="onKeyUp()" />
   `
 })
 export class CoursesComponent {
@@ -44,5 +45,9 @@ export class CoursesComponent {
 
   onDivClicked() {
     console.log('Div was clicked');
+  }
+
+  onKeyUp() {
+    console.log('ENTER was pressed');
   }
 }
