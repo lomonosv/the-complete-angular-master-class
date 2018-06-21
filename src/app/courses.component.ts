@@ -24,7 +24,7 @@ import { CoursesService } from './courses.service';
           (click)="onSave($event)"
       >Save</button>
     </div>
-    <input #email type="text" (keyup.enter)="onKeyUp(email.value)" />
+    <input type="text" (keyup.enter)="onKeyUp()" [(ngModel)]="email" />
   `
 })
 export class CoursesComponent {
@@ -33,6 +33,7 @@ export class CoursesComponent {
   colSpan = 2;
   courses: string[];
   isActive = false;
+  email = 'me@example.com';
 
   constructor(private coursesService: CoursesService) {
     this.courses = this.coursesService.getCourses();
@@ -47,7 +48,7 @@ export class CoursesComponent {
     console.log('Div was clicked');
   }
 
-  onKeyUp(email) {
-    console.log(email);
+  onKeyUp() {
+    console.log(this.email);
   }
 }
