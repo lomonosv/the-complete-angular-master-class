@@ -11,10 +11,10 @@ export class CasingPipe implements PipeTransform {
 
     let words = value.split(' ');
 
-    words = words.map((word) => {
+    words = words.map((word, index) => {
       const preparedWord = word.toLowerCase();
 
-      if (preparedWord === 'of' || preparedWord === 'the') {
+      if ((preparedWord === 'of' || preparedWord === 'the') && index > 0) {
         return preparedWord;
       }
 
