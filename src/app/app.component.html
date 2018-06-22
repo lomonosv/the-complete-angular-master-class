@@ -1,4 +1,7 @@
-<app-favorite
-        [is-favorite]="post.isFavorite"
-        (is-change)="onFavoriteChanged($event)"
-></app-favorite>
+<button
+  [ngStyle]="{
+    backgroundColor: canSave ? 'blue' : 'gray',
+    color: canSave ? 'white' : 'black',
+    fontWeight: canSave ? 'bold' : 'normal'
+  }"
+>Save</button>

@@ -3,12 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FavoriteComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
