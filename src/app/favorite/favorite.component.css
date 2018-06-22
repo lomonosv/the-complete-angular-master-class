@@ -3,3 +3,12 @@ span {
     width: 20px;
     height: 20px;
 }
+.glyphicon {
+    border: 1px solid #ccc;
+}
+.glyphicon-star-empty {
+    background: white;
+}
+.glyphicon-star {
+    background: black;
+}
