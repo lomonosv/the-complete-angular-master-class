@@ -3,12 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ZippyComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
